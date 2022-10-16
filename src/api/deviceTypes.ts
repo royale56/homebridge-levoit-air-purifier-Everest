@@ -1,4 +1,5 @@
 export enum DeviceName {
+  EverestAir = 'EverestAir',
   Core601S = '601S',
   Core600S = '600S',
   Core401S = '401S',
@@ -21,6 +22,7 @@ export interface DeviceType {
 const deviceTypes: DeviceType[] = [
   {
     isValid: (input: string) =>
+      input.includes(DeviceName.EverestAir) ||
       input.includes(DeviceName.Core601S) ||
       input.includes(DeviceName.Core600S) ||
       input.includes(DeviceName.Core401S) ||
